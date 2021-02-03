@@ -69,6 +69,11 @@ async function buildJSON() {
     });
 
     await promises.writeFile(JSON_FILE, JSON.stringify(output, null, 4));
+
+    await promises.writeFile(
+        path.join(__dirname, "Save.json"),
+        JSON.stringify(output, null, 4)
+    );
 }
 
 buildJSON();
